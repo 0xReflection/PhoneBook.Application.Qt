@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+	<class>PhoneBookAppQtClass</class>
+	<widget class="QMainWindow" name="PhoneBookAppQtClass">
+		<property name="geometry">
+			<rect>
+				<x>0</x>
+				<y>0</y>
+				<width>900</width>
+				<height>600</height>
+			</rect>
+		</property>
+		<property name="windowTitle">
+			<string>Телефонная книга</string>
+		</property>
+		<widget class="QWidget" name="centralWidget">
+			<layout class="QVBoxLayout" name="verticalLayout">
+				<item>
+					<layout class="QHBoxLayout" name="searchLayout">
+						<item>
+							<widget class="QLineEdit" name="searchEdit">
+								<property name="placeholderText">
+									<string>Введите номер или ФИО...</string>
+								</property>
+							</widget>
+						</item>
+						<item>
+							<widget class="QPushButton" name="searchButton">
+								<property name="text">
+									<string>🔍 Найти</string>
+								</property>
+							</widget>
+						</item>
+					</layout>
+				</item>
+				<item>
+					<widget class="QTableView" name="tableView">
+						<property name="alternatingRowColors">
+							<bool>true</bool>
+						</property>
+						<property name="selectionBehavior">
+							<enum>QAbstractItemView::SelectRows</enum>
+						</property>
+						<property name="selectionMode">
+							<enum>QAbstractItemView::SingleSelection</enum>
+						</property>
+					</widget>
+				</item>
+				<item>
+					<layout class="QHBoxLayout" name="addLayout">
+						<item>
+							<widget class="QLineEdit" name="phoneEdit">
+								<property name="placeholderText">
+									<string>Номер телефона (11 цифр)</string>
+								</property>
+							</widget>
+						</item>
+						<item>
+							<widget class="QLineEdit" name="nameEdit">
+								<property name="placeholderText">
+									<string>ФИО</string>
+								</property>
+							</widget>
+						</item>
+						<item>
+							<widget class="QPushButton" name="addButton">
+								<property name="text">
+									<string>➕ Добавить</string>
+								</property>
+							</widget>
+						</item>
+						<item>
+							<widget class="QPushButton" name="removeButton">
+								<property name="text">
+									<string>🗑 Удалить</string>
+								</property>
+							</widget>
+						</item>
+					</layout>
+				</item>
+				<item>
+					<widget class="QLabel" name="statusLabel">
+						<property name="text">
+							<string>Всего контактов: 0</string>
+						</property>
+					</widget>
+				</item>
+
+			</layout>
+		</widget>
+	</widget>
+	<resources/>
+	<connections/>
+</ui>
