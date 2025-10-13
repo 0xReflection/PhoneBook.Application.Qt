@@ -19,12 +19,13 @@ private:
     Ui::MainWindow *ui;
     ContactController* m_controller;
     QStandardItemModel* m_contactsModel;
+    bool m_darkTheme;
 
     void setupUI();
     void setupConnections();
     void refreshContacts();
     void showContactDialog(const Contact& contact = Contact());
-    void deleteSelectedContact();
+    void toggleTheme();
 
 public:
     MainWindow(ContactController* controller, QWidget *parent = nullptr);
@@ -36,6 +37,8 @@ private slots:
     void onDeleteContact();
     void onSearchTextChanged(const QString& text);
     void onContactDoubleClicked(const QModelIndex& index);
+    void onRefreshButtonClicked();
+    void onThemeButtonClicked();
 
     void onContactAdded(const Contact& contact);
     void onContactUpdated(const Contact& contact);

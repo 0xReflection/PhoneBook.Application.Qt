@@ -6,26 +6,95 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>500</width>
-    <height>450</height>
+    <width>450</width>
+    <height>380</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>450</width>
+    <height>380</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Contact</string>
   </property>
-  <property name="modal">
-   <bool>true</bool>
+  <property name="styleSheet">
+   <string notr="true">/* Light Theme - Modern UI/UX */
+QDialog {
+    background: #ffffff;
+    color: #2d3748;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+QLabel {
+    color: #2d3748;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+QLineEdit, QPlainTextEdit {
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+    background: #ffffff;
+    color: #2d3748;
+    selection-background-color: #3182ce;
+}
+
+QLineEdit:focus, QPlainTextEdit:focus {
+    border-color: #3182ce;
+    outline: none;
+}
+
+QPlainTextEdit {
+    min-height: 80px;
+}
+
+QPushButton {
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    min-height: 32px;
+    min-width: 80px;
+}
+
+QPushButton:hover {
+    transform: translateY(-1px);
+}
+
+QPushButton:pressed {
+    transform: translateY(0px);
+}
+
+#saveButton {
+    background: #3182ce;
+    color: #ffffff;
+}
+
+#saveButton:hover {
+    background: #2c5aa0;
+}
+
+#cancelButton {
+    background: #a0aec0;
+    color: #ffffff;
+}
+
+#cancelButton:hover {
+    background: #718096;
+}</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <layout class="QVBoxLayout" name="verticalLayout" >
    <item>
-    <layout class="QFormLayout" name="formLayout">
+    <layout class="QFormLayout" name="formLayout" >
      <item row="0" column="0">
       <widget class="QLabel" name="firstNameLabel">
        <property name="text">
         <string>First Name:</string>
-       </property>
-       <property name="buddy">
-        <cstring>firstNameEdit</cstring>
        </property>
       </widget>
      </item>
@@ -41,9 +110,6 @@
        <property name="text">
         <string>Last Name:</string>
        </property>
-       <property name="buddy">
-        <cstring>lastNameEdit</cstring>
-       </property>
       </widget>
      </item>
      <item row="1" column="1">
@@ -58,9 +124,6 @@
        <property name="text">
         <string>Phone:</string>
        </property>
-       <property name="buddy">
-        <cstring>phoneEdit</cstring>
-       </property>
       </widget>
      </item>
      <item row="2" column="1">
@@ -74,9 +137,6 @@
       <widget class="QLabel" name="emailLabel">
        <property name="text">
         <string>Email:</string>
-       </property>
-       <property name="buddy">
-        <cstring>emailEdit</cstring>
        </property>
       </widget>
      </item>
@@ -94,24 +154,21 @@
      <property name="text">
       <string>Notes:</string>
      </property>
-     <property name="buddy">
-      <cstring>notesEdit</cstring>
-     </property>
     </widget>
    </item>
    <item>
     <widget class="QPlainTextEdit" name="notesEdit">
      <property name="placeholderText">
-      <string>Enter additional notes</string>
+      <string>Enter additional notes...</string>
      </property>
     </widget>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="buttonLayout">
+    <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <spacer name="horizontalSpacer">
        <property name="orientation">
-        <enum>Qt::Orientation::Horizontal</enum>
+        <enum>Qt::Horizontal</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -126,6 +183,12 @@
        <property name="text">
         <string>Save</string>
        </property>
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>32</height>
+        </size>
+       </property>
        <property name="default">
         <bool>true</bool>
        </property>
@@ -136,21 +199,18 @@
        <property name="text">
         <string>Cancel</string>
        </property>
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>32</height>
+        </size>
+       </property>
       </widget>
      </item>
     </layout>
    </item>
   </layout>
  </widget>
- <tabstops>
-  <tabstop>firstNameEdit</tabstop>
-  <tabstop>lastNameEdit</tabstop>
-  <tabstop>phoneEdit</tabstop>
-  <tabstop>emailEdit</tabstop>
-  <tabstop>notesEdit</tabstop>
-  <tabstop>saveButton</tabstop>
-  <tabstop>cancelButton</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>
