@@ -1,7 +1,6 @@
 #ifndef CONTACT_H
 #define CONTACT_H
 #include <QString>
-#include <QDate>
 class Contact
 {
 private:
@@ -30,6 +29,7 @@ public:
     void setFirstName(const QString& firstName) {m_firstName = firstName;}
     void setLastName ( const QString& lastName) {m_lastName = lastName;}
     void setPhone(const QString& phone) {m_phone = phone;}
+    void setEmail(const QString& email) {m_email = email;}
     void setNotes(const QString& notes) {m_notes = notes;}
 
     bool isValid() const;

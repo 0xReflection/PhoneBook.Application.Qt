@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QStandardItemModel>
+#include "../controllers/contactcontroller.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -13,11 +15,32 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
-
 private:
     Ui::MainWindow *ui;
+    ContactController* m_controller;
+    QStandardItemModel* m_contactsModel;
+
+    void setupUI();
+    void setupConnections();
+    void refreshContacts();
+    void showContactDialog(const Contact& contact = Contact());
+    void deleteSelectedContact();
+
+public:
+    MainWindow(ContactController* controller, QWidget *parent = nullptr);
+    ~MainWindow();
+
+private slots:
+    void onAddContact();
+    void onEditContact();
+    void onDeleteContact();
+    void onSearchTextChanged(const QString& text);
+    void onContactDoubleClicked(const QModelIndex& index);
+
+    void onContactAdded(const Contact& contact);
+    void onContactUpdated(const Contact& contact);
+    void onContactDeleted(int id);
+    void onErrorOccurred(const QString& error);
 };
+
 #endif // MAINWINDOW_H
