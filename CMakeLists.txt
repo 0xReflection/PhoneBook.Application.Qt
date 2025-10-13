@@ -8,9 +8,18 @@ qt_standard_project_setup()
 qt_add_executable(PhoneBookApp
     WIN32 MACOSX_BUNDLE
     main.cpp
-    mainwindow.cpp
-    mainwindow.h
-    mainwindow.ui
+    views/mainwindow.cpp views/mainwindow.h views/mainwindow.ui
+
+
+
+    views/contactdialog.cpp views/contactdialog.h
+    repositories/contactrepository.cpp repositories/contactrepository.h
+    models/contact.cpp models/contact.h
+    controllers/contactcontroller.cpp controllers/contactcontroller.h
+
+
+
+
 )
 
 target_link_libraries(PhoneBookApp
